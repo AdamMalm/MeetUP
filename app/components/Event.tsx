@@ -7,8 +7,7 @@ const Event = ({ title, description, location, eventImage, noGoing, imageGoing1,
   
   return (
     <View style={styles.container}>
-        {// <Image source={require(eventImage)}/>
-        }
+        <Image source={require("../assets/favicon.png")}/>
         <Text>{title}</Text>
         <Text>{description}</Text>
         <Text>{location}</Text>
@@ -23,7 +22,6 @@ const styles = StyleSheet.create({
       maxWidth: "40%",
       display: 'flex',
       justifyContent: 'center',
-      
     },
   });
 

@@ -11,7 +11,7 @@ const Eventpage = () => {
           title="Example Title" 
           description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
           location="Ducklake"
-          eventImage="../assets/Duckfeeding.jpg"
+          eventImage="../assets/Duckfeeding.avif"
           noGoing={10}
           imageGoing1="../assets/going1.jpg"
           imageGoing2="../assets/going2.jpg"
