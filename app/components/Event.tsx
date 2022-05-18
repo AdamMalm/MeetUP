@@ -1,11 +1,12 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
+import { Card } from 'react-native-elements'
 
 const Event = () => {
   return (
-    <View style={styles.container}>
+    <Card containerStyle={styles.container}>
         <Text>Event</Text>
-    </View>
+    </Card>
   )
 }
 
