@@ -11,7 +11,7 @@ const s = `{
           "noGoing":"842",
           "imageGoing1":"app/assets/going1.avif",
           "imageGoing2":"app/assets/going2.avif",
-          "imageGoing3":"app/assets/going3.avif",
+          "imageGoing3":"app/assets/going3.avif"
        },
        {
           "eventId":2,
@@ -24,7 +24,7 @@ const s = `{
           "noGoing":"5",
           "imageGoing1":"app/assets/going1.avif",
           "imageGoing2":"app/assets/going2.avif",
-          "imageGoing3":"app/assets/going3.avif",
+          "imageGoing3":"app/assets/going3.avif"
        },
        {
           "eventId":3,
@@ -37,7 +37,7 @@ const s = `{
           "noGoing":"10",
           "imageGoing1":"app/assets/going1.avif",
           "imageGoing2":"app/assets/going2.avif",
-          "imageGoing3":"app/assets/going3.avif",
+          "imageGoing3":"app/assets/going3.avif"
        },
        {
         "eventId":4,
@@ -50,7 +50,7 @@ const s = `{
         "noGoing":"123",
         "imageGoing1":"app/assets/going1.avif",
         "imageGoing2":"app/assets/going2.avif",
-        "imageGoing3":"app/assets/going3.avif",
+        "imageGoing3":"app/assets/going3.avif"
      },
      {
         "eventId":5,
@@ -63,7 +63,7 @@ const s = `{
         "noGoing":"52",
         "imageGoing1":"app/assets/going1.avif",
         "imageGoing2":"app/assets/going2.avif",
-        "imageGoing3":"app/assets/going3.avif",
+        "imageGoing3":"app/assets/going3.avif"
      },
      {
         "eventId":6,
@@ -76,7 +76,7 @@ const s = `{
         "noGoing":"7",
         "imageGoing1":"app/assets/going1.avif",
         "imageGoing2":"app/assets/going2.avif",
-        "imageGoing3":"app/assets/going3.avif",
+        "imageGoing3":"app/assets/going3.avif"
      },
      {
         "eventId":7,
@@ -89,7 +89,7 @@ const s = `{
         "noGoing":"420",
         "imageGoing1":"app/assets/going1.avif",
         "imageGoing2":"app/assets/going2.avif",
-        "imageGoing3":"app/assets/going3.avif",
+        "imageGoing3":"app/assets/going3.avif"
      },
      {
         "eventId":8,
@@ -102,7 +102,7 @@ const s = `{
         "noGoing":"1",
         "imageGoing1":"app/assets/going1.avif",
         "imageGoing2":"app/assets/going2.avif",
-        "imageGoing3":"app/assets/going3.avif",
+        "imageGoing3":"app/assets/going3.avif"
      },
      {
         "eventId":9,
@@ -115,8 +115,8 @@ const s = `{
         "noGoing":"66",
         "imageGoing1":"app/assets/going1.avif",
         "imageGoing2":"app/assets/going2.avif",
-        "imageGoing3":"app/assets/going3.avif",
-     },
+        "imageGoing3":"app/assets/going3.avif"
+     }
     ]
  }`
 
