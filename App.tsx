@@ -1,12 +1,13 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import Event from './app/components/Event'
 
 export default function App() {
   return (
     <NavigationContainer >{
         <View style={styles.container}>
-          <Text>asdasdasdasd</Text>
+          <Event />
           <StatusBar style="auto" />
         </View>
       }</NavigationContainer>
