@@ -16,7 +16,7 @@ const BottomTabNavigator = () => {
 			initialRouteName="Events Explorer"
 			screenOptions={({ route }) => ({
 				tabBarStyle: { position: "absolute", height: 93 },
-				tabBarItemStyle: {},
+				tabBarIconStyle: { width: 65 },
 				tabBarIcon: ({ focused, color, size }) => {
 					let iconName;
 
@@ -37,7 +37,7 @@ const BottomTabNavigator = () => {
 					}
 
 					// You can return any component that you like here!
-					return <Ionicons name={iconName} size={40} color={color} />;
+					return <Ionicons name={iconName} size={60} color={color} />;
 				},
 				tabBarActiveTintColor: "#4F1271",
 				tabBarInactiveTintColor: "#120D26",
