@@ -13,6 +13,7 @@ const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
 	return (
 		<Tab.Navigator
+			initialRouteName="Events Explorer"
 			screenOptions={({ route }) => ({
 				tabBarIcon: ({ focused, color, size }) => {
 					let iconName;
@@ -42,8 +43,8 @@ const BottomTabNavigator = () => {
 						<Ionicons name={iconName} size={size} color={color} />
 					);
 				},
-				tabBarActiveTintColor: "tomato",
-				tabBarInactiveTintColor: "gray",
+				tabBarActiveTintColor: "#4F1271",
+				tabBarInactiveTintColor: "#120D26",
 			})}
 		>
 			<Tab.Screen name="Cantact List" component={Contactpage} />
