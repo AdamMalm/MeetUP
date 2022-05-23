@@ -47,11 +47,41 @@ const BottomTabNavigator = () => {
 				tabBarInactiveTintColor: "#120D26",
 			})}
 		>
-			<Tab.Screen name="Cantact List" component={Contactpage} />
-			<Tab.Screen name="Chat Rooms" component={Contactpage} />
-			<Tab.Screen name="Events Explorer" component={Eventpage} />
-			<Tab.Screen name="Timeline" component={Timelinepage} />
-			<Tab.Screen name="Event Creator" component={CreateEventpage} />
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Cantact List"
+				component={Contactpage}
+			/>
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Chat Rooms"
+				component={Contactpage}
+			/>
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Events Explorer"
+				component={Eventpage}
+			/>
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Timeline"
+				component={Timelinepage}
+			/>
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Event Creator"
+				component={CreateEventpage}
+			/>
 		</Tab.Navigator>
 	);
 };
