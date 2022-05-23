@@ -13,44 +13,71 @@ const Tab = createBottomTabNavigator();
 const BottomTabNavigator = () => {
 	return (
 		<Tab.Navigator
+			initialRouteName="Events Explorer"
 			screenOptions={({ route }) => ({
+				tabBarStyle: { position: "absolute", height: 93 },
+				tabBarItemStyle: {},
 				tabBarIcon: ({ focused, color, size }) => {
 					let iconName;
 
 					if (route.name === "Events Explorer") {
-						iconName = focused ? "grid-outline" : "grid-outline";
+						iconName = focused ? "grid" : "grid-outline";
 					} else if (route.name === "Chat Rooms") {
 						iconName = focused
-							? "chatbubbles-outline"
+							? "chatbubbles"
 							: "chatbubbles-outline";
 					} else if (route.name === "Cantact List") {
-						iconName = focused
-							? "person-outline"
-							: "person-outline";
+						iconName = focused ? "person" : "person-outline";
 					} else if (route.name === "Timeline") {
-						iconName = focused
-							? "calendar-outline"
-							: "calendar-outline";
+						iconName = focused ? "calendar" : "calendar-outline";
 					} else if (route.name === "Event Creator") {
 						iconName = focused
-							? "add-circle-outline"
+							? "add-circle"
 							: "add-circle-outline";
 					}
 
 					// You can return any component that you like here!
-					return (
-						<Ionicons name={iconName} size={size} color={color} />
-					);
+					return <Ionicons name={iconName} size={40} color={color} />;
 				},
-				tabBarActiveTintColor: "tomato",
-				tabBarInactiveTintColor: "gray",
+				tabBarActiveTintColor: "#4F1271",
+				tabBarInactiveTintColor: "#120D26",
 			})}
 		>
-			<Tab.Screen name="Cantact List" component={Contactpage} />
-			<Tab.Screen name="Chat Rooms" component={Contactpage} />
-			<Tab.Screen name="Events Explorer" component={Eventpage} />
-			<Tab.Screen name="Timeline" component={Timelinepage} />
-			<Tab.Screen name="Event Creator" component={CreateEventpage} />
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Cantact List"
+				component={Contactpage}
+			/>
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Chat Rooms"
+				component={Contactpage}
+			/>
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Events Explorer"
+				component={Eventpage}
+			/>
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Timeline"
+				component={Timelinepage}
+			/>
+			<Tab.Screen
+				options={{
+					tabBarShowLabel: false,
+				}}
+				name="Event Creator"
+				component={CreateEventpage}
+			/>
 		</Tab.Navigator>
 	);
 };
