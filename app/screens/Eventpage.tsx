@@ -2,10 +2,11 @@ import React from 'react'
 import { ScrollView, Text, StyleSheet, View } from 'react-native'
 import Event from '../components/Event'
 import eventdata from '../../jsonconverter'
+import Background from "../components/Background";
  
 const Eventpage = () => {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView>
       <View style={styles.categoryContainer}>
         <Event 
           title="Example Title" 
@@ -76,13 +77,7 @@ const Eventpage = () => {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    
-
-  },
-
   categoryContainer: {
-    backgroundColor: 'red',
     display: 'flex',
     flexDirection: 'row',
     marginTop: 20,

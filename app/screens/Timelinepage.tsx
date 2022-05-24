@@ -1,8 +1,9 @@
 import React, { useContext } from 'react'
 import { ScrollView, Text, View, Button } from 'react-native'
 import { useSession } from '../config/Eventprovider'
+import Background from "../components/Background";
 
-  // NEDAN ÄR ETT EXEMPEL PÅ HUR MAN ANVÄNDER CONTEXT, ÄR BARA ATT TA BORT IFALL DU SKA BYGGA UPP SIDAN
+  // NEDAN ÄR EXEMPEL PÅ HUR MAN ANVÄNDER CONTEXT, ÄR BARA ATT TA BORT IFALL DU SKA BYGGA UPP SIDAN
 
 const Timelinepage = () => { 
   const { eventList, addEvent } = useSession()

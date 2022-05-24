@@ -4,7 +4,9 @@ import eventdata from '../../jsonconverter'
 
 const contextDefaultValues: EventContextState = {
   eventList: eventdata,
-  addEvent: () => {}
+  addEvent: () => {},
+  personalEventList: [],
+  registerEvent: () => {}
 };
 
 export const EventContext = createContext<EventContextState>(
@@ -12,19 +14,23 @@ export const EventContext = createContext<EventContextState>(
 );
 
 export const useSession = () => {
-  return useContext(EventContext)
+  return useContext(EventContext);
 }
 
 const Eventprovider: FC = ({ children }) => {
   const [eventList, setEvent] = useState<string[]>(contextDefaultValues.eventList);
+  const [personalEventList, setPersonalEvent] = useState<string[]>(contextDefaultValues.personalEventList);
 
   const addEvent = (newEvent: string) => setEvent((eventList) => [...eventList, newEvent]);
+  const registerEvent = (newEvent: string) => setPersonalEvent((personalEventList) => [...personalEventList, newEvent]);
 
   return (
     <EventContext.Provider
       value={{
         eventList,
-        addEvent
+        addEvent,
+        personalEventList, 
+        registerEvent
       }}
     >
       {children}
