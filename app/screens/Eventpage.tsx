@@ -13,7 +13,7 @@ const Eventpage = () => {
     <ScrollView>
       <View style={styles.container}>
 				<Background/>
-        <View style={styles.categoryContainer}>
+        <ScrollView style={styles.categoryContainer} horizontal={true}>
             <Text style={[styles.categoryTag, styles.firstChild]}>All</Text>
             <Text style={styles.categoryTag}>Local</Text>
             <Text style={styles.categoryTag}>This week</Text>
@@ -22,8 +22,8 @@ const Eventpage = () => {
             <Text style={styles.categoryTag}>Art</Text>
             <Text style={styles.categoryTag}>Games</Text>
             <Text style={styles.categoryTag}>Ducks</Text>
-        </View>
-				<View style={styles.eventContainer}>
+        </ScrollView>
+				<ScrollView style={styles.eventContainer} horizontal={true}>
           <Event 
             title="Example Title" 
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
@@ -54,9 +54,9 @@ const Eventpage = () => {
               imageGoing2="../assets/going2.jpg"
               imageGoing3="../assets/going3.jpg"
           />
-        </View>
+        </ScrollView>
           
-        <View style={styles.eventContainer}>
+        <ScrollView style={styles.eventContainer} horizontal={true}>
           <Event 
             title="Example Title" 
               description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
@@ -87,7 +87,7 @@ const Eventpage = () => {
               imageGoing2="../assets/going2.jpg"
               imageGoing3="../assets/going3.jpg"
           />
-        </View>
+        </ScrollView>
 			</View>
 		</ScrollView>
 	);
@@ -107,14 +107,14 @@ const styles = StyleSheet.create({
   },
   categoryTag: {
     fontSize: 24,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingLeft: 30,
+    paddingRight: 30,
     paddingTop: 10,
     paddingBottom: 10,
     backgroundColor: 'white',
     borderRadius: 20,
-    margin: 10,
-    whiteSpace: 'nowrap'
+    margin: 20,
+    height: 55
 
   },
   firstChild: {
@@ -123,10 +123,7 @@ const styles = StyleSheet.create({
     textDecorationStyle: 'solid'
   },
   eventContainer: {
-    display: 'flex',
-    flexDirection: 'row',
-    marginTop: 20,
-    overflow: 'scroll'
+    
   }
 });
 

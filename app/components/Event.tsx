@@ -38,7 +38,7 @@ const Event = ({ title, description, location, eventImage, noGoing, imageGoing1,
  
 const styles = StyleSheet.create({
     container: {
-      backgroundColor: 'fff',
+      backgroundColor: '#fff',
       width: eventWidth,
       height: eventHeight,
       display: 'flex',
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
  
     },
     contentContainer: {
-      backgroundColor: 'fff',
+      backgroundColor: '#fff',
       padding: 10,
       display: "flex",
       flexWrap: 'wrap',
