@@ -7,7 +7,6 @@ import CreateEventpage from "../screens/CreateEventpage";
 import Eventpage from "../screens/Eventpage";
 import Timelinepage from "../screens/Timelinepage";
 
-
 import Ionicons from "react-native-vector-icons/Ionicons";
 
 const Tab = createBottomTabNavigator();
@@ -51,6 +50,7 @@ const BottomTabNavigator = () => {
 		>
 			<Tab.Screen
 				options={{
+					headerShown: false,
 					tabBarShowLabel: false,
 				}}
 				name="Cantact List"
@@ -58,6 +58,7 @@ const BottomTabNavigator = () => {
 			/>
 			<Tab.Screen
 				options={{
+					headerShown: false,
 					tabBarShowLabel: false,
 				}}
 				name="Chat Rooms"
@@ -65,6 +66,7 @@ const BottomTabNavigator = () => {
 			/>
 			<Tab.Screen
 				options={{
+					headerShown: false,
 					tabBarShowLabel: false,
 				}}
 				name="Events Explorer"
@@ -72,6 +74,7 @@ const BottomTabNavigator = () => {
 			/>
 			<Tab.Screen
 				options={{
+					headerShown: false,
 					tabBarShowLabel: false,
 				}}
 				name="Timeline"
@@ -79,6 +82,7 @@ const BottomTabNavigator = () => {
 			/>
 			<Tab.Screen
 				options={{
+					headerShown: false,
 					tabBarShowLabel: false,
 				}}
 				name="Event Creator"
