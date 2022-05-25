@@ -3,8 +3,7 @@ import { ScrollView, Text, StyleSheet, View, Dimensions } from "react-native";
 import Event from "../components/Event";
 import eventdata from "../../jsonconverter";
 import Background from "../components/Background";
-import HeaderButton from "../components/HeaderButton";
-import SearchButton from "../components/SearchButton";
+import { faFirstAid } from "@fortawesome/free-solid-svg-icons";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
@@ -12,11 +11,21 @@ const width = Dimensions.get("window").width;
 const Eventpage = () => {
 	return (
 		<ScrollView>
-			<HeaderButton />
-			<SearchButton />
 			<View style={styles.container}>
 				<Background />
 				<View style={styles.categoryContainer}>
+					<Text style={[styles.categoryTag, styles.firstChild]}>
+						All
+					</Text>
+					<Text style={styles.categoryTag}>Local</Text>
+					<Text style={styles.categoryTag}>This week</Text>
+					<Text style={styles.categoryTag}>Classes</Text>
+					<Text style={styles.categoryTag}>Online</Text>
+					<Text style={styles.categoryTag}>Art</Text>
+					<Text style={styles.categoryTag}>Games</Text>
+					<Text style={styles.categoryTag}>Ducks</Text>
+				</View>
+				<View style={styles.eventContainer}>
 					<Event
 						title="Example Title"
 						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
@@ -49,7 +58,7 @@ const Eventpage = () => {
 					/>
 				</View>
 
-				<View style={styles.categoryContainer}>
+				<View style={styles.eventContainer}>
 					<Event
 						title="Example Title"
 						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
@@ -92,10 +101,33 @@ const styles = StyleSheet.create({
 		height: height,
 		width: width,
 	},
+
 	categoryContainer: {
 		display: "flex",
 		flexDirection: "row",
+		overflow: "scroll",
+	},
+	categoryTag: {
+		fontSize: 24,
+		paddingLeft: 20,
+		paddingRight: 20,
+		paddingTop: 10,
+		paddingBottom: 10,
+		backgroundColor: "white",
+		borderRadius: 20,
+		margin: 10,
+		whiteSpace: "nowrap",
+	},
+	firstChild: {
+		textDecorationLine: "underline",
+		textDecorationColor: "4F1271",
+		textDecorationStyle: "solid",
+	},
+	eventContainer: {
+		display: "flex",
+		flexDirection: "row",
 		marginTop: 20,
+		overflow: "scroll",
 	},
 });
 
