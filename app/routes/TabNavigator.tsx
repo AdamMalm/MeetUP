@@ -15,7 +15,11 @@ const BottomTabNavigator = () => {
 		<Tab.Navigator
 			initialRouteName="Events Explorer"
 			screenOptions={({ route }) => ({
-				tabBarStyle: { position: "absolute", height: 93 },
+				tabBarStyle: {
+					position: "absolute",
+					height: 93,
+				},
+
 				tabBarIconStyle: { width: 65 },
 				tabBarIcon: ({ focused, color, size }) => {
 					let iconName;
