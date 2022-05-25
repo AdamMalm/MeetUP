@@ -1,12 +1,15 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, ImageBackground, Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomTabNavigator from "./app/routes/TabNavigator";
+import Eventprovider from './app/config/Eventprovider'
 
 export default function App() {
 	return (
 		<NavigationContainer>
-			<BottomTabNavigator />
+			<Eventprovider>
+				<BottomTabNavigator/>
+			</Eventprovider>
 		</NavigationContainer>
 	);
 }

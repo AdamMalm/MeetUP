@@ -2,9 +2,11 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 import React from "react";
 import Contactpage from "../screens/Contactpage";
+import Chatpage from "../screens/Chatpage";
 import CreateEventpage from "../screens/CreateEventpage";
 import Eventpage from "../screens/Eventpage";
 import Timelinepage from "../screens/Timelinepage";
+
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 
@@ -59,7 +61,7 @@ const BottomTabNavigator = () => {
 					tabBarShowLabel: false,
 				}}
 				name="Chat Rooms"
-				component={Contactpage}
+				component={Chatpage}
 			/>
 			<Tab.Screen
 				options={{
@@ -85,4 +87,5 @@ const BottomTabNavigator = () => {
 		</Tab.Navigator>
 	);
 };
+
 export default BottomTabNavigator;
