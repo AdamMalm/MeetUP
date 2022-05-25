@@ -3,6 +3,7 @@ import { ScrollView, Text, StyleSheet, View, Dimensions } from "react-native";
 import Event from "../components/Event";
 import eventdata from "../../jsonconverter";
 import Background from "../components/Background";
+import HeaderButton from "../components/HeaderButton";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
@@ -10,6 +11,7 @@ const width = Dimensions.get("window").width;
 const Eventpage = () => {
 	return (
 		<ScrollView>
+			<HeaderButton />
 			<View style={styles.container}>
 				<Background />
 				<View style={styles.categoryContainer}>

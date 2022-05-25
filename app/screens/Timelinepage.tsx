@@ -21,6 +21,7 @@ const Timelinepage = () => {
 
 	return (
 		<ScrollView>
+			<HeaderButton />
 			<View style={styles.container}>
 				<Background />
 				<Text>Timeline Page</Text>
