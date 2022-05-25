@@ -4,6 +4,8 @@ import Event from "../components/Event";
 import eventdata from "../../jsonconverter";
 import Background from "../components/Background";
 import { faFirstAid } from "@fortawesome/free-solid-svg-icons";
+import HeaderButton from "../components/HeaderButton";
+import SearchButton from "../components/SearchButton";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
@@ -11,12 +13,12 @@ const width = Dimensions.get("window").width;
 const Eventpage = () => {
 	return (
 		<ScrollView>
+			<HeaderButton />
+			<SearchButton />
 			<View style={styles.container}>
 				<Background />
 				<View style={styles.categoryContainer}>
-					<Text style={[styles.categoryTag, styles.firstChild]}>
-						All
-					</Text>
+					<Text style={[styles.categoryTag]}>All</Text>
 					<Text style={styles.categoryTag}>Local</Text>
 					<Text style={styles.categoryTag}>This week</Text>
 					<Text style={styles.categoryTag}>Classes</Text>
