@@ -3,10 +3,10 @@ import { ScrollView, Text, StyleSheet, View, Dimensions } from "react-native";
 import Event from "../components/Event";
 import eventdata from "../../jsonconverter";
 import Background from "../components/Background";
-import { faFirstAid } from '@fortawesome/free-solid-svg-icons';
- 
-const height = Dimensions.get('window').height
-const width = Dimensions.get('window').width
+import { faFirstAid } from "@fortawesome/free-solid-svg-icons";
+
+const height = Dimensions.get("window").height;
+const width = Dimensions.get("window").width;
 
 const Eventpage = () => {
   return (
