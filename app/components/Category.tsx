@@ -1,10 +1,17 @@
 import React from 'react'
-import { View } from 'react-native'
+import { View, Text } from 'react-native'
+import Event from './Event'
 
-const Category = () => {
+
+const Category = ({ categoryData, events }:  { categoryData: any, events: any }) => {
   return (
     <View>
-        
+        <Text>{categoryData.name}</Text>
+        {
+            events.map((item: any) => {
+                return (<Event eventData={item}/>)
+            })
+        }
     </View>
   )
 }

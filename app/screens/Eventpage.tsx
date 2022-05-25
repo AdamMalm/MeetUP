@@ -1,24 +1,31 @@
 import React from "react";
 import { ScrollView, Text, StyleSheet, View, Dimensions } from "react-native";
 import Event from "../components/Event";
-import eventdata from "../../jsonconverter";
 import Background from "../components/Background";
-import { faFirstAid } from "@fortawesome/free-solid-svg-icons";
-import HeaderButton from "../components/HeaderButton";
-import SearchButton from "../components/SearchButton";
+import Category from "../components/Category";
+import { useSession } from "../config/Eventprovider";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
 
 const Eventpage = () => {
+	const { eventList, addEvent } = useSession();
+
+	const addEvents = (categoryId: number) => {
+		const events = eventList.events.filter(
+			(item: any) => item.categoryId === categoryId
+		);
+		return events;
+	};
+
 	return (
-		<ScrollView>
-			<HeaderButton />
-			<SearchButton />
-			<View style={styles.container}>
-				<Background />
-				<View style={styles.categoryContainer}>
-					<Text style={[styles.categoryTag]}>All</Text>
+		<View style={styles.container}>
+			<Background />
+			<ScrollView>
+				<ScrollView style={styles.categoryContainer} horizontal={true}>
+					<Text style={[styles.categoryTag, styles.firstChild]}>
+						All
+					</Text>
 					<Text style={styles.categoryTag}>Local</Text>
 					<Text style={styles.categoryTag}>This week</Text>
 					<Text style={styles.categoryTag}>Classes</Text>
@@ -26,74 +33,17 @@ const Eventpage = () => {
 					<Text style={styles.categoryTag}>Art</Text>
 					<Text style={styles.categoryTag}>Games</Text>
 					<Text style={styles.categoryTag}>Ducks</Text>
-				</View>
-				<View style={styles.eventContainer}>
-					<Event
-						title="Example Title"
-						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-						location="Ducklake"
-						eventImage="../assets/Duckfeeding.avif"
-						noGoing={10}
-						imageGoing1="../assets/going1.jpg"
-						imageGoing2="../assets/going2.jpg"
-						imageGoing3="../assets/going3.jpg"
-					/>
-					<Event
-						title="Example Title"
-						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-						location="Ducklake"
-						eventImage="../assets/Duckfeeding.avif"
-						noGoing={10}
-						imageGoing1="../assets/going1.jpg"
-						imageGoing2="../assets/going2.jpg"
-						imageGoing3="../assets/going3.jpg"
-					/>
-					<Event
-						title="Example Title"
-						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-						location="Ducklake"
-						eventImage="../assets/Duckfeeding.avif"
-						noGoing={10}
-						imageGoing1="../assets/going1.jpg"
-						imageGoing2="../assets/going2.jpg"
-						imageGoing3="../assets/going3.jpg"
-					/>
-				</View>
-
-				<View style={styles.eventContainer}>
-					<Event
-						title="Example Title"
-						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-						location="Ducklake"
-						eventImage="../assets/Duckfeeding.avif"
-						noGoing={10}
-						imageGoing1="../assets/going1.jpg"
-						imageGoing2="../assets/going2.jpg"
-						imageGoing3="../assets/going3.jpg"
-					/>
-					<Event
-						title="Example Title"
-						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-						location="Ducklake"
-						eventImage="../assets/Duckfeeding.avif"
-						noGoing={10}
-						imageGoing1="../assets/going1.jpg"
-						imageGoing2="../assets/going2.jpg"
-						imageGoing3="../assets/going3.jpg"
-					/>
-					<Event
-						title="Example Title"
-						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-						location="Ducklake"
-						eventImage="../assets/Duckfeeding.avif"
-						noGoing={10}
-						imageGoing1="../assets/going1.jpg"
-						imageGoing2="../assets/going2.jpg"
-						imageGoing3="../assets/going3.jpg"
-					/>
-				</View>
-			</View>
-		</ScrollView>
+				</ScrollView>
+				{eventList.categories.map((item: any) => {
+					return (
+						<Category
+							categoryData={item}
+							events={addEvents(item.categoryId)}
+						/>
+					);
+				})}
+			</ScrollView>
+		</View>
 	);
 };
 
@@ -111,26 +61,21 @@ const styles = StyleSheet.create({
 	},
 	categoryTag: {
 		fontSize: 24,
-		paddingLeft: 20,
-		paddingRight: 20,
+		paddingLeft: 30,
+		paddingRight: 30,
 		paddingTop: 10,
 		paddingBottom: 10,
 		backgroundColor: "white",
 		borderRadius: 20,
-		margin: 10,
-		whiteSpace: "nowrap",
+		margin: 20,
+		height: 55,
 	},
 	firstChild: {
 		textDecorationLine: "underline",
 		textDecorationColor: "4F1271",
 		textDecorationStyle: "solid",
 	},
-	eventContainer: {
-		display: "flex",
-		flexDirection: "row",
-		marginTop: 20,
-		overflow: "scroll",
-	},
+	eventContainer: {},
 });
 
 export default Eventpage;
