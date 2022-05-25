@@ -1,7 +1,7 @@
-import React from 'react'
-import { ScrollView, Text, StyleSheet, View, Dimensions } from 'react-native'
-import Event from '../components/Event'
-import eventdata from '../../jsonconverter'
+import React from "react";
+import { ScrollView, Text, StyleSheet, View, Dimensions } from "react-native";
+import Event from "../components/Event";
+import eventdata from "../../jsonconverter";
 import Background from "../components/Background";
 import { faFirstAid } from '@fortawesome/free-solid-svg-icons';
  
@@ -89,16 +89,17 @@ const Eventpage = () => {
           />
         </View>
 			</View>
-    </ScrollView>
-  )
-}
+		</ScrollView>
+	);
+};
 
 const styles = StyleSheet.create({
-  container: {
-	  flex: 1,
-	  height: height,
-	  width: width,
+	container: {
+		flex: 1,
+		height: height,
+		width: width,
 	},
+
   categoryContainer: {
     display: 'flex',
     flexDirection: 'row',
@@ -129,4 +130,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Eventpage
+export default Eventpage;
