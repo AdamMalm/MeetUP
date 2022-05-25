@@ -1,7 +1,10 @@
 import React, { useContext } from 'react'
-import { ScrollView, Text, View, Button } from 'react-native'
+import { ScrollView, Text, View, Button, Dimensions, StyleSheet } from 'react-native'
 import { useSession } from '../config/Eventprovider'
 import Background from "../components/Background";
+
+const height = Dimensions.get('window').height
+const width = Dimensions.get('window').width
 
   // NEDAN ÄR EXEMPEL PÅ HUR MAN ANVÄNDER CONTEXT, ÄR BARA ATT TA BORT IFALL DU SKA BYGGA UPP SIDAN
 
@@ -10,6 +13,8 @@ const Timelinepage = () => {
 
   return (
     <ScrollView>
+      <View style={styles.container}>
+				<Background/>
         <Text>Timeline Page</Text>
         <View>
           {
@@ -20,8 +25,17 @@ const Timelinepage = () => {
 
         </View>
         <Button onPress={() => console.log(eventList)} title="check events"/>
+			</View>
     </ScrollView>
   )
 }
+
+const styles = StyleSheet.create({
+	container: {
+	  flex: 1,
+	  height: height,
+	  width: width,
+	},
+});
 
 export default Timelinepage
