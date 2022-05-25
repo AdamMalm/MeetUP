@@ -17,7 +17,6 @@ const Eventpage = () => {
 }
 
   return (
-
       <View style={styles.container}>
 				<Background/>
         <ScrollView>
