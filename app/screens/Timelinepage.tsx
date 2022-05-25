@@ -1,41 +1,52 @@
-import React, { useContext } from 'react'
-import { ScrollView, Text, View, Button, Dimensions, StyleSheet } from 'react-native'
-import { useSession } from '../config/Eventprovider'
+import React, { useContext } from "react";
+import {
+	ScrollView,
+	Text,
+	View,
+	Button,
+	Dimensions,
+	StyleSheet,
+} from "react-native";
+import { useSession } from "../config/Eventprovider";
 import Background from "../components/Background";
+import HeaderButton from "../components/HeaderButton";
+import SearchButton from "../components/SearchButton";
 
-const height = Dimensions.get('window').height
-const width = Dimensions.get('window').width
+const height = Dimensions.get("window").height;
+const width = Dimensions.get("window").width;
 
-  // NEDAN ÄR EXEMPEL PÅ HUR MAN ANVÄNDER CONTEXT, ÄR BARA ATT TA BORT IFALL DU SKA BYGGA UPP SIDAN
+// NEDAN ÄR EXEMPEL PÅ HUR MAN ANVÄNDER CONTEXT, ÄR BARA ATT TA BORT IFALL DU SKA BYGGA UPP SIDAN
 
-const Timelinepage = () => { 
-  const { eventList, addEvent } = useSession()
+const Timelinepage = () => {
+	const { eventList, addEvent } = useSession();
 
-  return (
-    <ScrollView>
-      <View style={styles.container}>
-				<Background/>
-        <Text>Timeline Page</Text>
-        <View>
-          {
-          eventList.events.map((item: any) => {
-            console.log(item.title)
-          })
-          }
-
-        </View>
-        <Button onPress={() => console.log(eventList)} title="check events"/>
+	return (
+		<ScrollView>
+			<HeaderButton />
+			<SearchButton />
+			<View style={styles.container}>
+				<Background />
+				<Text>Timeline Page</Text>
+				<View>
+					{eventList.events.map((item: any) => {
+						console.log(item.title);
+					})}
+				</View>
+				<Button
+					onPress={() => console.log(eventList)}
+					title="check events"
+				/>
 			</View>
-    </ScrollView>
-  )
-}
+		</ScrollView>
+	);
+};
 
 const styles = StyleSheet.create({
 	container: {
-	  flex: 1,
-	  height: height,
-	  width: width,
+		flex: 1,
+		height: height,
+		width: width,
 	},
 });
 
-export default Timelinepage
+export default Timelinepage;
