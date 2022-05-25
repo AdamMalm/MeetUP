@@ -1,13 +1,15 @@
-import React from 'react'
-import { ScrollView, Text } from 'react-native'
+import React from "react";
+import { ScrollView, Text } from "react-native";
 import Background from "../components/Background";
- 
-const CreateEventpage = () => {
-  return (
-    <ScrollView>
-        <Text>Create Event Page</Text>
-    </ScrollView>
-  )
-}
+import HeaderButton from "../components/HeaderButton";
 
-export default CreateEventpage
+const CreateEventpage = () => {
+	return (
+		<ScrollView>
+			<HeaderButton />
+			<Text>Create Event Page</Text>
+		</ScrollView>
+	);
+};
+
+export default CreateEventpage;

@@ -1,13 +1,15 @@
-import React from 'react'
-import { ScrollView, Text } from 'react-native'
+import React from "react";
+import { ScrollView, Text } from "react-native";
 import Background from "../components/Background";
- 
-const Contactpage = () => {
-  return (
-    <ScrollView>
-        <Text>Contact Page</Text>
-    </ScrollView>
-  )
-}
+import HeaderButton from "../components/HeaderButton";
 
-export default Contactpage
+const Contactpage = () => {
+	return (
+		<ScrollView>
+			<HeaderButton />
+			<Text>Contact Page</Text>
+		</ScrollView>
+	);
+};
+
+export default Contactpage;
