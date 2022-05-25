@@ -10,6 +10,7 @@ import {
 import { useSession } from "../config/Eventprovider";
 import Background from "../components/Background";
 import HeaderButton from "../components/HeaderButton";
+import SearchButton from "../components/SearchButton";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
@@ -22,6 +23,7 @@ const Timelinepage = () => {
 	return (
 		<ScrollView>
 			<HeaderButton />
+			<SearchButton />
 			<View style={styles.container}>
 				<Background />
 				<Text>Timeline Page</Text>

@@ -14,18 +14,19 @@ const HeaderButton = () => {
 					top: 10,
 					right: 10,
 					width: 155,
+					height: 80,
 					justifyContent: "center",
-					borderRadius: 18,
+					borderRadius: 22,
 					marginTop: 14,
 					zIndex: 1,
 				}}
 			>
 				<Button
-					buttonStyle={{ backgroundColor: "#FFFFFF" }}
+					buttonStyle={{ marginTop: 5, backgroundColor: "#FFFFFF" }}
 					icon={<Icon name="user-o" size={52} color="black" />}
 				/>
 				<Button
-					buttonStyle={{ backgroundColor: "#FFFFFF" }}
+					buttonStyle={{ marginTop: 5, backgroundColor: "#FFFFFF" }}
 					icon={<Icon name="bell-o" size={52} color="black" />}
 				/>
 			</View>
