@@ -4,6 +4,8 @@ import Event from "../components/Event";
 import Background from "../components/Background";
 import Category from "../components/Category";
 import { useSession } from "../config/Eventprovider";
+import HeaderButton from "../components/HeaderButton";
+import SearchButton from "../components/SearchButton";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
@@ -19,8 +21,22 @@ const Eventpage = () => {
 	};
 
 	return (
-		<View style={styles.container}>
+		<ScrollView style={styles.container}>
+			<Text
+				style={{
+					zIndex: 1,
+					fontSize: 38,
+					color: "white",
+					marginTop: 34,
+					marginLeft: 134,
+				}}
+			>
+				{" "}
+				Discover Events
+			</Text>
 			<Background />
+			<HeaderButton />
+			<SearchButton />
 			<ScrollView>
 				<ScrollView style={styles.categoryContainer} horizontal={true}>
 					<Text style={[styles.categoryTag, styles.firstChild]}>
@@ -34,16 +50,18 @@ const Eventpage = () => {
 					<Text style={styles.categoryTag}>Games</Text>
 					<Text style={styles.categoryTag}>Ducks</Text>
 				</ScrollView>
-				{eventList.categories.map((item: any) => {
-					return (
-						<Category
-							categoryData={item}
-							events={addEvents(item.categoryId)}
-						/>
-					);
-				})}
+				<ScrollView>
+					{eventList.categories.map((item: any) => {
+						return (
+							<Category
+								categoryData={item}
+								events={addEvents(item.categoryId)}
+							></Category>
+						);
+					})}
+				</ScrollView>
 			</ScrollView>
-		</View>
+		</ScrollView>
 	);
 };
 
@@ -52,27 +70,28 @@ const styles = StyleSheet.create({
 		flex: 1,
 		height: height,
 		width: width,
+		marginBottom: 100,
 	},
 
 	categoryContainer: {
+		marginTop: 30,
 		display: "flex",
 		flexDirection: "row",
 		overflow: "scroll",
 	},
 	categoryTag: {
 		fontSize: 24,
-		paddingLeft: 30,
-		paddingRight: 30,
-		paddingTop: 10,
-		paddingBottom: 10,
+		paddingTop: 13,
+		paddingLeft: 28,
+		paddingRight: 28,
+		borderRadius: 22,
 		backgroundColor: "white",
-		borderRadius: 20,
 		margin: 20,
 		height: 55,
 	},
 	firstChild: {
 		textDecorationLine: "underline",
-		textDecorationColor: "4F1271",
+		textDecorationColor: "#4F1271",
 		textDecorationStyle: "solid",
 	},
 	eventContainer: {},
