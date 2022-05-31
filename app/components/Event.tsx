@@ -68,6 +68,7 @@ const styles = StyleSheet.create({
 		height: eventHeight,
 		display: "flex",
 		margin: 20,
+		marginBottom: 50,
 		borderRadius: 8,
 		shadowColor: "#000",
 		shadowOffset: {
@@ -76,8 +77,9 @@ const styles = StyleSheet.create({
 		},
 		shadowOpacity: 0.3,
 		shadowRadius: 4.3,
-		marginBottom: 60,
-		elevation: 24,
+
+		elevation: 8,
+		overflowY: "visible",
 	},
 	contentContainer: {
 		backgroundColor: "#fff",
@@ -95,38 +97,37 @@ const styles = StyleSheet.create({
 		borderTopRightRadius: 8,
 	},
 	title: {
-		fontSize: 24,
+		fontSize: 29,
 		fontWeight: "bold",
 	},
 	description: {
-		fontSize: 20,
+		fontSize: 25,
 		color: "#747688",
 	},
-	icon: {
-		margin: 10,
-	},
+	icon: { marginTop: 17, marginLeft: 10, marginRight: 10 },
 	location: {
-		fontSize: 20,
-		marginTop: 5,
+		fontSize: 25,
+		marginTop: 10,
+		marginRight: 40,
 	},
 	goingContainer: {
-		marginLeft: 30,
+		marginTop: 7,
 		display: "flex",
 		flexWrap: "wrap",
-		alignItems: "flex-start",
+		alignItems: "flex-end",
 		flexDirection: "row",
 	},
 	goingText: {
 		marginLeft: 10,
-		fontSize: 20,
+		fontSize: 25,
 		marginTop: 5,
 		color: "#000",
 	},
 	goingImg: {
 		marginTop: 5,
 		marginLeft: -5,
-		height: 30,
-		width: 30,
+		height: 35,
+		width: 35,
 		borderRadius: 100,
 	},
 });

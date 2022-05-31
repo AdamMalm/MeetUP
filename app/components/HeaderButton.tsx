@@ -17,7 +17,7 @@ const HeaderButton = () => {
 					height: 80,
 					justifyContent: "center",
 					borderRadius: 22,
-					marginTop: 14,
+					marginTop: 20,
 					zIndex: 1,
 				}}
 			>
