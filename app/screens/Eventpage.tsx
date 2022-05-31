@@ -25,7 +25,7 @@ const Eventpage = () => {
 			<Text
 				style={{
 					zIndex: 1,
-					fontSize: 38,
+					fontSize: 43,
 					color: "white",
 					marginTop: 34,
 					marginLeft: 134,
@@ -80,14 +80,15 @@ const styles = StyleSheet.create({
 		overflow: "scroll",
 	},
 	categoryTag: {
-		fontSize: 24,
+		fontSize: 29,
 		paddingTop: 13,
+		paddingBottom: 13,
 		paddingLeft: 28,
 		paddingRight: 28,
-		borderRadius: 22,
+		borderRadius: 20,
 		backgroundColor: "white",
 		margin: 20,
-		height: 55,
+		height: 65,
 	},
 	firstChild: {
 		textDecorationLine: "underline",

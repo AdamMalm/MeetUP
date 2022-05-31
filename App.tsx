@@ -2,14 +2,14 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, ImageBackground, Image } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import BottomTabNavigator from "./app/routes/TabNavigator";
-import Eventprovider from './app/config/Eventprovider'
+import Eventprovider from "./app/config/Eventprovider";
 import Background from "./app/components/Background";
 
 export default function App() {
 	return (
 		<NavigationContainer>
 			<Eventprovider>
-				<BottomTabNavigator/>
+				<BottomTabNavigator />
 			</Eventprovider>
 		</NavigationContainer>
 	);
@@ -17,6 +17,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
 	container: {
+		fontFamily: "SF Pro Display",
 		flex: 1,
 		backgroundColor: "#fff",
 		alignItems: "center",
