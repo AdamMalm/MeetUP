@@ -29,7 +29,7 @@ const Timelinepage = () => {
 				<Text>Timeline Page</Text>
 				<View>
 					{eventList.events.map((item: any) => {
-						console.log(item.title);
+						
 					})}
 				</View>
 				<Button

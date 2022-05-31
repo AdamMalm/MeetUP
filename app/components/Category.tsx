@@ -10,7 +10,7 @@ const Category = ({
 	events: any;
 }) => {
 	return (
-		<View>
+		<View >
 			<View>
 				<Text style={{ fontSize: 34, marginLeft: 20 }}>
 					{categoryData.name}

@@ -1,9 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, Image, View } from "react-native";
+import { StyleSheet, Text, Image, View, Button } from "react-native";
 import { Dimensions } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCoffee, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { inlineStyles } from "react-native-svg";
+import { RootStackParamList } from "../config/types"
+import { useNavigation } from "@react-navigation/native";
+import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 
 const eventWidth = 0.45 * Dimensions.get("window").width;
 const eventHeight = 0.25 * Dimensions.get("window").height;
@@ -11,6 +14,8 @@ const imageWidth = 0.45 * Dimensions.get("window").width;
 const imagetHeight = 0.5 * eventHeight;
 
 const Event = ({ eventData }: { eventData: any }) => {
+	const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
+
 	return (
 		<View style={styles.container}>
 			<>
@@ -45,6 +50,12 @@ const Event = ({ eventData }: { eventData: any }) => {
 						+{eventData.noGoing} Going
 					</Text>
 				</View>
+				<Button 
+					title="read more" 
+					onPress={ () => {
+						navigation.navigate('DetailedEventpage', eventData)
+					}} 
+				/>
 			</View>
 		</View>
 	);
@@ -65,7 +76,7 @@ const styles = StyleSheet.create({
 		},
 		shadowOpacity: 0.3,
 		shadowRadius: 4.3,
-
+		marginBottom: 60,
 		elevation: 24,
 	},
 	contentContainer: {

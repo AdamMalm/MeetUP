@@ -6,6 +6,7 @@ import Chatpage from "../screens/Chatpage";
 import CreateEventpage from "../screens/CreateEventpage";
 import Eventpage from "../screens/Eventpage";
 import Timelinepage from "../screens/Timelinepage";
+import StackNavigator from "./StackNavigator";
 
 import Ionicons from "react-native-vector-icons/Ionicons";
 
