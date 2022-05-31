@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
 		height: eventHeight,
 		display: "flex",
 		margin: 20,
-		marginBottom: 50,
+		marginBottom: 60,
 		borderRadius: 8,
 		shadowColor: "#000",
 		shadowOffset: {
@@ -78,8 +78,7 @@ const styles = StyleSheet.create({
 		shadowOpacity: 0.3,
 		shadowRadius: 4.3,
 
-		elevation: 8,
-		overflowY: "visible",
+		elevation: 16,
 	},
 	contentContainer: {
 		backgroundColor: "#fff",
