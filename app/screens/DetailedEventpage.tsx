@@ -51,18 +51,17 @@ const DetailedEventpage = ({ route, navigation }: Props) => {
 				</LinearGradient>
 			</View>
 			<View style={styles.infoContainer}>
-				<View style={styles.joinEventView}>
-					<TouchableOpacity
-						style={styles.registerButton}
-						onPress={() => {
-							registerEvent(route.params);
-						}}
-					>
-						<Text style={styles.buttonText}>Join Event</Text>
-					</TouchableOpacity>
-				</View>
-
-				<Text style={styles.title}>{route.params.title}</Text>
+        <View style={styles.ohgodplease}>
+          <Text style={styles.title}>{route.params.title}</Text>
+          <TouchableOpacity
+              style={styles.registerButton}
+              onPress={() => {
+                registerEvent(route.params);
+              }}
+            >
+            <Text style={styles.buttonText}>Join Event</Text>
+          </TouchableOpacity>
+        </View>
 				<View style={styles.goingView}>
 					<Image
 						source={{ uri: route.params.imageGoing1 }}
@@ -107,8 +106,8 @@ const DetailedEventpage = ({ route, navigation }: Props) => {
 				<Text style={styles.description}>
 					{route.params.description}
 				</Text>
-
-				<TouchableOpacity style={styles.shareButton}>
+			</View>
+      <TouchableOpacity style={styles.shareButton}>
 					<Ionicons
 						
 						name="share-social-outline"
@@ -119,7 +118,6 @@ const DetailedEventpage = ({ route, navigation }: Props) => {
 						Share with contacts
 					</Text>
 				</TouchableOpacity>
-			</View>
 		</View>
 	);
 };
@@ -150,13 +148,9 @@ const styles = StyleSheet.create({
 		alignContent: "flex-start",
 		width: "100%",
 	},
-	joinEventView: {
-		marginRight: 40,
-	},
 	registerButton: {
-		marginTop: 33,
-		right: 40,
-		position: "absolute",
+		marginTop: 15,
+    marginBottom: 15,
 		justifyContent: "center",
 		backgroundColor: "#4F1271",
 		maxWidth: buttonWidth,
@@ -172,22 +166,22 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
 		flexDirection: "row",
 		backgroundColor: "#4F1271",
-    maxWidth: fontWidth*0.3,
+    maxWidth: fontWidth*0.34,
 		borderRadius: 8,
 		marginTop: 33,
-    padding: 10,
-    paddingTop: 16,
-    height: 100,
+    marginLeft: 40,
+    padding: 20,
+    margin: "auto",
 	},
 	shareButtonText: {
 		color: "white",
 		textAlign: "center",
 		fontSize: fontWidth*0.022,
+    
 	},
 	title: {
 		fontSize: fontWidth*0.034,
 		marginTop: 30,
-		marginLeft: 40,
 		fontWeight: "bold",
 		marginBottom: 30,
 	},
@@ -229,7 +223,6 @@ const styles = StyleSheet.create({
 	},
 	goingView: {
 		paddingTop: 20,
-		marginRight: 40,
 		marginTop: 7,
 		flex: 1,
 		display: "flex",
@@ -251,6 +244,13 @@ const styles = StyleSheet.create({
 		marginTop: 5,
 		color: "black",
 	},
+  ohgodplease: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginRight: 40,
+    marginLeft: 40,
+    marginTop: 10,
+  }
 });
 
 export default DetailedEventpage;
