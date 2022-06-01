@@ -9,7 +9,7 @@ const width = Dimensions.get("window").width;
 
 const Contactpage = () => {
 	return (
-		<ScrollView>
+		<ScrollView showsVerticalScrollIndicator={false}>
 			<HeaderButton />
 			<SearchButton />
 			<View style={styles.container}>

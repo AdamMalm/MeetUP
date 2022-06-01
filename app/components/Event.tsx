@@ -1,9 +1,8 @@
 import React from "react";
-import { StyleSheet, Text, Image, View, Button } from "react-native";
+import { StyleSheet, Text, Image, View, Button, TouchableOpacity } from "react-native";
 import { Dimensions } from "react-native";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { faCoffee, faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { inlineStyles } from "react-native-svg";
 import { RootStackParamList } from "../config/types"
 import { useNavigation } from "@react-navigation/native";
 import { NativeStackNavigationProp } from "@react-navigation/native-stack";
@@ -11,52 +10,50 @@ import { NativeStackNavigationProp } from "@react-navigation/native-stack";
 const eventWidth = 0.45 * Dimensions.get("window").width;
 const eventHeight = 0.25 * Dimensions.get("window").height;
 const imageWidth = 0.45 * Dimensions.get("window").width;
-const imagetHeight = 0.5 * eventHeight;
+const imageHeight = 0.5 * eventHeight;
 
 const Event = ({ eventData }: { eventData: any }) => {
 	const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
 
 	return (
 		<View style={styles.container}>
-			<>
+			<TouchableOpacity
+				onPress={ () => {
+					navigation.navigate('DetailedEventpage', eventData)
+				}}
+			>
 				<Image
 					source={{ uri: eventData.eventImage }}
 					style={styles.image}
 				/>
-			</>
-			<View style={styles.contentContainer}>
-				<Text style={styles.title}>{eventData.title}</Text>
-				<Text style={styles.description}>{eventData.description}</Text>
-				<FontAwesomeIcon
-					icon={faLocationDot}
-					size={22}
-					style={styles.icon}
-				/>
-				<Text style={styles.location}>{eventData.location}</Text>
-				<View style={styles.goingContainer}>
-					<Image
-						source={{ uri: eventData.imageGoing1 }}
-						style={styles.goingImg}
-					/>
-					<Image
-						source={{ uri: eventData.imageGoing2 }}
-						style={styles.goingImg}
-					/>
-					<Image
-						source={{ uri: eventData.imageGoing3 }}
-						style={styles.goingImg}
-					/>
-					<Text style={styles.goingText}>
-						+{eventData.noGoing} Going
-					</Text>
+				<View style={styles.contentContainer}>
+						<Text style={styles.title}>{eventData.title}</Text>
+						<Text style={styles.description}>{eventData.description}</Text>
+						<FontAwesomeIcon
+							icon={faLocationDot}
+							size={22}
+							style={styles.icon}
+						/>
+						<Text style={styles.location}>{eventData.location}</Text>
+						<View style={styles.goingContainer}>
+							<Image
+								source={{ uri: eventData.imageGoing1 }}
+								style={styles.goingImg}
+							/>
+							<Image
+								source={{ uri: eventData.imageGoing2 }}
+								style={styles.goingImg}
+							/>
+							<Image
+								source={{ uri: eventData.imageGoing3 }}
+								style={styles.goingImg}
+							/>
+							<Text style={styles.goingText}>
+								+{eventData.noGoing} Going
+							</Text>
+						</View>
 				</View>
-				<Button 
-					title="read more" 
-					onPress={ () => {
-						navigation.navigate('DetailedEventpage', eventData)
-					}} 
-				/>
-			</View>
+			</TouchableOpacity>
 		</View>
 	);
 };
@@ -91,7 +88,7 @@ const styles = StyleSheet.create({
 
 	image: {
 		width: imageWidth,
-		height: imagetHeight,
+		height: imageHeight,
 		borderTopLeftRadius: 8,
 		borderTopRightRadius: 8,
 	},

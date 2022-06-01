@@ -11,6 +11,7 @@ import { useSession } from "../config/Eventprovider";
 import Background from "../components/Background";
 import HeaderButton from "../components/HeaderButton";
 import SearchButton from "../components/SearchButton";
+import Event from "../components/Event"
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
@@ -18,22 +19,22 @@ const width = Dimensions.get("window").width;
 // NEDAN ÄR EXEMPEL PÅ HUR MAN ANVÄNDER CONTEXT, ÄR BARA ATT TA BORT IFALL DU SKA BYGGA UPP SIDAN
 
 const Timelinepage = () => {
-	const { eventList, addEvent } = useSession();
+	const { personalEventList } = useSession();
 
 	return (
-		<ScrollView>
+		<ScrollView showsVerticalScrollIndicator={false}>
 			<HeaderButton />
 			<SearchButton />
-			<View style={styles.container}>
+			<View style={{marginBottom: height*0.1}}>
 				<Background />
 				<Text>Timeline Page</Text>
 				<View>
-					{eventList.events.map((item: any) => {
-						
+					{personalEventList.map((item: any) => {
+						return <Event eventData={item} />;
 					})}
 				</View>
 				<Button
-					onPress={() => console.log(eventList)}
+					onPress={() => console.log(personalEventList)}
 					title="check events"
 				/>
 			</View>
@@ -43,9 +44,7 @@ const Timelinepage = () => {
 
 const styles = StyleSheet.create({
 	container: {
-		flex: 1,
-		height: height,
-		width: width,
+		
 	},
 });
 

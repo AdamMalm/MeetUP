@@ -16,7 +16,7 @@ const Category = ({
 					{categoryData.name}
 				</Text>
 			</View>
-			<ScrollView horizontal={true}>
+			<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
 				{events.map((item: any) => {
 					return <Event eventData={item} />;
 				})}

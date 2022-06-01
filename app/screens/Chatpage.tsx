@@ -9,7 +9,7 @@ const width = Dimensions.get("window").width;
 
 const Chatpage = () => {
 	return (
-		<ScrollView>
+		<ScrollView showsVerticalScrollIndicator={false}>
 			<HeaderButton />
 			<SearchButton />
 			<View style={styles.container}>

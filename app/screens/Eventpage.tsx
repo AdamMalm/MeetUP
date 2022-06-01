@@ -21,7 +21,7 @@ const Eventpage = () => {
 	};
 
 	return (
-		<ScrollView style={styles.container}>
+		<ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
 			<Text
 				style={{
 					zIndex: 1,
@@ -37,8 +37,8 @@ const Eventpage = () => {
 			<Background />
 			<HeaderButton />
 			<SearchButton />
-			<ScrollView>
-				<ScrollView style={styles.categoryContainer} horizontal={true}>
+			<View style={{marginBottom: height*0.075}}>
+				<ScrollView style={styles.categoryContainer} horizontal={true} showsHorizontalScrollIndicator={false}>
 					<Text style={[styles.categoryTag, styles.firstChild]}>
 						All
 					</Text>
@@ -60,7 +60,7 @@ const Eventpage = () => {
 						);
 					})}
 				</ScrollView>
-			</ScrollView>
+			</View>
 		</ScrollView>
 	);
 };
@@ -70,9 +70,7 @@ const styles = StyleSheet.create({
 		flex: 1,
 		height: height,
 		width: width,
-		marginBottom: 100,
 	},
-
 	categoryContainer: {
 		marginTop: 30,
 		display: "flex",

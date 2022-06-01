@@ -41,7 +41,6 @@ const BottomTabNavigator = () => {
 							? "add-circle"
 							: "add-circle-outline";
 					}
-
 					// You can return any component that you like here!
 					return <Ionicons name={iconName} size={60} color={color} />;
 				},
