@@ -22,21 +22,16 @@ const Timelinepage = () => {
 	const { personalEventList } = useSession();
 
 	return (
-		<ScrollView showsVerticalScrollIndicator={false}>
+		<ScrollView showsVerticalScrollIndicator={false} style={styles.container}>
 			<HeaderButton />
 			<SearchButton />
-			<View style={{marginBottom: height*0.1}}>
+			<View style={{marginBottom: height*0.1, minHeight: 0.5 * height}}>
 				<Background />
-				<Text>Timeline Page</Text>
 				<View>
-					{personalEventList.map((item: any) => {
-						return <Event eventData={item} />;
+					{personalEventList.map((item: any, i: number) => {
+						return <Event eventData={item} key={i}/>;
 					})}
 				</View>
-				<Button
-					onPress={() => console.log(personalEventList)}
-					title="check events"
-				/>
 			</View>
 		</ScrollView>
 	);
@@ -44,7 +39,9 @@ const Timelinepage = () => {
 
 const styles = StyleSheet.create({
 	container: {
-		
+		flex: 1,
+		height: height,
+		width: width,
 	},
 });
 

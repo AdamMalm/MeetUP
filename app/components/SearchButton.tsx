@@ -1,7 +1,9 @@
 import React from "react";
-import { View } from "react-native";
+import { View, Dimensions } from "react-native";
 import { Button } from "react-native-elements";
 import Ionicons from "react-native-vector-icons/Ionicons";
+
+const fontWidth = Dimensions.get("window").width;
 
 const SearchButton = () => {
 	return (
@@ -13,20 +15,22 @@ const SearchButton = () => {
 					position: "absolute",
 					top: 10,
 					right: 181,
-					width: 90,
-					height: 80,
+					padding: 6,
+					paddingRight: 10,
+					paddingLeft: 14,
 					justifyContent: "center",
 					borderRadius: 22,
 					marginTop: 20,
 					zIndex: 1,
+					elevation: 2,
 				}}
 			>
 				<Button
-					buttonStyle={{ marginTop: 3.5, backgroundColor: "white" }}
+					buttonStyle={{ margin: 3.5, backgroundColor: "white" }}
 					icon={
 						<Ionicons
 							name="ios-search-outline"
-							size={52}
+							size={fontWidth*0.049}
 							color="black"
 						/>
 					}

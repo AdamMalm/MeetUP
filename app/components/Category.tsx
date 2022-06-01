@@ -1,6 +1,8 @@
 import React from "react";
-import { Text, ScrollView, View } from "react-native";
+import { Text, ScrollView, View, Dimensions } from "react-native";
 import Event from "./Event";
+
+const fontWidth = Dimensions.get("window").width;
 
 const Category = ({
 	categoryData,
@@ -12,13 +14,13 @@ const Category = ({
 	return (
 		<View >
 			<View>
-				<Text style={{ fontSize: 34, marginLeft: 20 }}>
+				<Text style={{ fontSize: fontWidth*0.031, marginLeft: 20 }}>
 					{categoryData.name}
 				</Text>
 			</View>
 			<ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
-				{events.map((item: any) => {
-					return <Event eventData={item} />;
+				{events.map((item: any, i: number) => {
+					return <Event eventData={item} key={i}/>;
 				})}
 			</ScrollView>
 		</View>

@@ -14,7 +14,6 @@ const Contactpage = () => {
 			<SearchButton />
 			<View style={styles.container}>
 				<Background />
-				<Text>Contact Page</Text>
 			</View>
 		</ScrollView>
 	);

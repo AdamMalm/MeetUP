@@ -13,6 +13,7 @@ const buttonWidth = 0.175 * windowWidth;
 const imageWidth = Dimensions.get("window").width;
 const imageHeight = 0.35 * Dimensions.get("window").height;
 const headerHeight =  0.25 * imageHeight;
+const fontWidth = Dimensions.get("window").width;
 
 const DetailedEventpage = ({ route, navigation }: Props) => {
   const { personalEventList, registerEvent } = useSession();
@@ -31,7 +32,7 @@ const DetailedEventpage = ({ route, navigation }: Props) => {
           >
             <Ionicons
                 name="arrow-back-outline"
-                size={58}
+                size={fontWidth*0.054}
                 color="black"
             />
           </TouchableOpacity>
@@ -62,8 +63,8 @@ const styles = StyleSheet.create({
     position: 'absolute',
     backgroundColor: "white",
     margin: 30,
-    padding: 6,
-    paddingRight: 10,
+    padding: 8,
+    paddingRight: 12,
     paddingLeft: 14,
     borderRadius: 22,
   },
@@ -77,7 +78,7 @@ const styles = StyleSheet.create({
     padding: 20,
     color: "white", 
     textAlign: 'center', 
-    fontSize: 24
+    fontSize: fontWidth*0.022
   }
 });
 

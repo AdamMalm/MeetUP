@@ -7,8 +7,11 @@ import CreateEventpage from "../screens/CreateEventpage";
 import Eventpage from "../screens/Eventpage";
 import Timelinepage from "../screens/Timelinepage";
 import StackNavigator from "./StackNavigator";
+import { Dimensions } from "react-native"
 
 import Ionicons from "react-native-vector-icons/Ionicons";
+
+const fontWidth = Dimensions.get("window").width;
 
 const Tab = createBottomTabNavigator();
 
@@ -19,7 +22,7 @@ const BottomTabNavigator = () => {
 			screenOptions={({ route }) => ({
 				tabBarStyle: {
 					position: "absolute",
-					height: 93,
+					height: fontWidth*0.085,
 				},
 
 				tabBarIconStyle: { width: 65 },
@@ -42,7 +45,7 @@ const BottomTabNavigator = () => {
 							: "add-circle-outline";
 					}
 					// You can return any component that you like here!
-					return <Ionicons name={iconName} size={60} color={color} />;
+					return <Ionicons name={iconName} size={fontWidth*0.055} color={color} />;
 				},
 				tabBarActiveTintColor: "#4F1271",
 				tabBarInactiveTintColor: "#120D26",

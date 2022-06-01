@@ -14,7 +14,6 @@ const CreateEventpage = () => {
 			<SearchButton />
 			<View style={styles.container}>
 				<Background />
-				<Text>Create Event Page</Text>
 			</View>
 		</ScrollView>
 	);

@@ -11,6 +11,7 @@ const eventWidth = 0.45 * Dimensions.get("window").width;
 const eventHeight = 0.25 * Dimensions.get("window").height;
 const imageWidth = 0.45 * Dimensions.get("window").width;
 const imageHeight = 0.5 * eventHeight;
+const fontWidth = Dimensions.get("window").width;
 
 const Event = ({ eventData }: { eventData: any }) => {
 	const navigation = useNavigation<NativeStackNavigationProp<RootStackParamList>>()
@@ -29,29 +30,31 @@ const Event = ({ eventData }: { eventData: any }) => {
 				<View style={styles.contentContainer}>
 						<Text style={styles.title}>{eventData.title}</Text>
 						<Text style={styles.description}>{eventData.description}</Text>
-						<FontAwesomeIcon
-							icon={faLocationDot}
-							size={22}
-							style={styles.icon}
-						/>
-						<Text style={styles.location}>{eventData.location}</Text>
-						<View style={styles.goingContainer}>
-							<Image
-								source={{ uri: eventData.imageGoing1 }}
-								style={styles.goingImg}
+						<View style={styles.rowContainer}>
+							<FontAwesomeIcon
+								icon={faLocationDot}
+								size={fontWidth*0.019}
+								style={styles.icon}
 							/>
-							<Image
-								source={{ uri: eventData.imageGoing2 }}
-								style={styles.goingImg}
-							/>
-							<Image
-								source={{ uri: eventData.imageGoing3 }}
-								style={styles.goingImg}
-							/>
-							<Text style={styles.goingText}>
-								+{eventData.noGoing} Going
-							</Text>
-						</View>
+							<Text style={styles.location}>{eventData.location}</Text>
+							<View style={styles.goingContainer}>
+								<Image
+									source={{ uri: eventData.imageGoing1 }}
+									style={styles.goingImg}
+								/>
+								<Image
+									source={{ uri: eventData.imageGoing2 }}
+									style={styles.goingImg}
+								/>
+								<Image
+									source={{ uri: eventData.imageGoing3 }}
+									style={styles.goingImg}
+								/>
+								<Text style={styles.goingText}>
+									+{eventData.noGoing} Going
+								</Text>
+							</View>
+						</View>	
 				</View>
 			</TouchableOpacity>
 		</View>
@@ -79,13 +82,18 @@ const styles = StyleSheet.create({
 	},
 	contentContainer: {
 		backgroundColor: "#fff",
-		padding: 10,
+		padding: fontWidth*0.01,
 		display: "flex",
 		flexWrap: "wrap",
 		alignItems: "flex-start",
 		flexDirection: "row",
 	},
-
+	rowContainer: {
+		display: "flex",
+		alignItems: "flex-start",
+		flexDirection: "row",
+		justifyContent: "space-evenly",
+	},
 	image: {
 		width: imageWidth,
 		height: imageHeight,
@@ -93,18 +101,18 @@ const styles = StyleSheet.create({
 		borderTopRightRadius: 8,
 	},
 	title: {
-		fontSize: 29,
+		fontSize: fontWidth*0.026,
 		fontWeight: "bold",
 	},
 	description: {
-		fontSize: 25,
+		fontSize: fontWidth*0.022,
 		color: "#747688",
 	},
 	icon: { marginTop: 17, marginLeft: 10, marginRight: 10 },
 	location: {
-		fontSize: 25,
+		fontSize: fontWidth*0.022,
 		marginTop: 10,
-		marginRight: 40,
+		marginRight: fontWidth*0.046,
 	},
 	goingContainer: {
 		marginTop: 7,
@@ -115,15 +123,15 @@ const styles = StyleSheet.create({
 	},
 	goingText: {
 		marginLeft: 10,
-		fontSize: 25,
+		fontSize: fontWidth*0.022,
 		marginTop: 5,
 		color: "#000",
 	},
 	goingImg: {
 		marginTop: 5,
 		marginLeft: -5,
-		height: 35,
-		width: 35,
+		height: fontWidth*0.03125,
+		width: fontWidth*0.03125,
 		borderRadius: 100,
 	},
 });

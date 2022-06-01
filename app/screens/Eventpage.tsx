@@ -9,6 +9,7 @@ import SearchButton from "../components/SearchButton";
 
 const height = Dimensions.get("window").height;
 const width = Dimensions.get("window").width;
+const fontWidth = Dimensions.get("window").width;
 
 const Eventpage = () => {
 	const { eventList, addEvent } = useSession();
@@ -25,7 +26,7 @@ const Eventpage = () => {
 			<Text
 				style={{
 					zIndex: 1,
-					fontSize: 43,
+					fontSize: fontWidth*0.04,
 					color: "white",
 					marginTop: 34,
 					marginLeft: 134,
@@ -51,11 +52,12 @@ const Eventpage = () => {
 					<Text style={styles.categoryTag}>Ducks</Text>
 				</ScrollView>
 				<ScrollView>
-					{eventList.categories.map((item: any) => {
+					{eventList.categories.map((item: any, i: number) => {
 						return (
 							<Category
 								categoryData={item}
 								events={addEvents(item.categoryId)}
+								key={i}
 							></Category>
 						);
 					})}
@@ -73,12 +75,13 @@ const styles = StyleSheet.create({
 	},
 	categoryContainer: {
 		marginTop: 30,
+		marginBottom: 30,
 		display: "flex",
 		flexDirection: "row",
 		overflow: "scroll",
 	},
 	categoryTag: {
-		fontSize: 29,
+		fontSize: fontWidth*0.026,
 		paddingTop: 13,
 		paddingBottom: 13,
 		paddingLeft: 28,
@@ -86,7 +89,6 @@ const styles = StyleSheet.create({
 		borderRadius: 20,
 		backgroundColor: "white",
 		margin: 20,
-		height: 65,
 	},
 	firstChild: {
 		textDecorationLine: "underline",
