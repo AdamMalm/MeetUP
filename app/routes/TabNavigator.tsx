@@ -33,7 +33,9 @@ const BottomTabNavigator = () => {
 							? "chatbubbles"
 							: "chatbubbles-outline";
 					} else if (route.name === "Cantact List") {
-						iconName = focused ? "person" : "person-outline";
+						iconName = focused
+							? "ios-people-sharp"
+							: "ios-people-outline";
 					} else if (route.name === "Timeline") {
 						iconName = focused ? "calendar" : "calendar-outline";
 					} else if (route.name === "Event Creator") {
